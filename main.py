@@ -41,4 +41,5 @@ create_activity_options(root,kof)
 
 tk.Button(root,text="Высчитать",command=get_dci, font=font).grid(row=12)
 # Изменения
+# Изменения в новой ветке
 root.mainloop()
