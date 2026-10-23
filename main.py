@@ -40,5 +40,5 @@ tk.Label(root, text="Коэффицент", font=font).grid(row=5, column=0)
 create_activity_options(root,kof)
 
 tk.Button(root,text="Высчитать",command=get_dci, font=font).grid(row=12)
-
+# Изменения
 root.mainloop()
