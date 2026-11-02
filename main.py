@@ -4,7 +4,7 @@ from calculation import get_dci
 
 def get_dci():
     bmi = int(weight.get())*10 + 6.25*int(height.get()) - 5*int(age.get())
-    if gender == "Ж":
+    if gender.get() == "Ж":
         bmi = (bmi - 161) * float(kof.get())
     else:
         bmi = (bmi + 5) * float(kof.get())
@@ -23,6 +23,9 @@ age = tk.StringVar()
 gender = tk.StringVar()
 kof = tk.StringVar()
 
+gender.set(None)
+kof.set(None)
+
 tk.Label(root, text="Калькулятор калорий", font=("Arial", 24, "bold"),background=bg_color).grid(row=0, column=0)
 
 #  Поля ввода
@@ -32,8 +35,8 @@ create_entry(root, "Возраст:", age, 3, 0, 3, 1)
 
 #  Выбор пола
 tk.Label(root, text="Пол:", font=font).grid(row=4, column=0,padx=10, pady=10)
-tk.Radiobutton(root, text="М", variable=gender, font=font).grid(row=4,column=1)
-tk.Radiobutton(root, text="Ж", variable=gender, font=font).grid(row=4,column=2)
+tk.Radiobutton(root, text="М", variable=gender, value="М", font=font).grid(row=4,column=1)
+tk.Radiobutton(root, text="Ж", variable=gender, value="Ж", font=font).grid(row=4,column=2)
 
 # Выбор коэффициента активности
 tk.Label(root, text="Коэффицент", font=font).grid(row=5, column=0)
